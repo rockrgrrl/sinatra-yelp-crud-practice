@@ -1,0 +1,20 @@
+<h1>You are logged into Yelp</h1>
+
+<p><a href="/logout">Logout</a>
+<br>
+<br>
+<h3>Here are your reviews:</h3>
+<ul>
+  <% @user.reviews.each do |review| %>
+    <li>Restaurant: <%=review.restaurant.name%><br>
+      Location: <%=review.restaurant.city.name%>,<%=review.restaurant.city.state%><br>
+     Review: <%= review.content %><br>
+     Rating: <%= review.rating %><br>
+     <% if review.user %>
+     Reviewed by: <%= review.user.username %><br>
+     <% end %>
+     Date: <%= review.date %>
+     <p><a href="">Edit this Review</a> <!--Couldn't get this link to work to edit review /users/@user.id/reviews/@review.id/edit-->
+   </li><br>
+  <%end%>
+</ul>

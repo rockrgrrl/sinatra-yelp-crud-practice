@@ -1,0 +1,22 @@
+<h1> Yelp </h1>
+
+<%if @error %>
+  <%= @error %>
+<%end%>
+
+<form action="/sessions" method="POST">
+  <p>
+    <label name="user[username]">Username</label>
+    <input name="user[username]" type="text"/>
+  </p>
+  <p>
+    <label name="user[password]">Password</label>
+    <input name="user[password]" type="password"/>
+  </p>
+  <p>
+    <input type="submit"/>
+  </p>
+</form>
+
+<a href="/users/new">Sign up here</a>
+

@@ -1,0 +1,28 @@
+
+<h1>You are logged into Yelp</h1>
+
+
+<p><a href='/reviews/new'>Add a review</a>
+<p><a href='/users/:user_id/reviews'>View and edit your reviews</a>
+<p><a href="/logout">Logout</a>
+<br>
+<br>
+<h3>Here are all the reviews:</h3>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>Restaurant: <%=review.restaurant.name%><br>
+      Location: <%=review.restaurant.city.name%>,<%=review.restaurant.city.state%><br>
+     Review: <%= review.content %><br>
+     Rating: <%= review.rating %><br>
+     <% if review.user %>
+     Reviewed by: <%= review.user.username %><br>
+     <% end %>
+     Date: <%= review.date %>
+
+   </li><br>
+
+  <%end%>
+</ul>
+
+
+

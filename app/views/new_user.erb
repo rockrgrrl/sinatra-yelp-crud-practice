@@ -1,0 +1,19 @@
+<h1>Signup for Yelp</h1>
+
+<%if @error %>
+  <%= @error %>
+<%end%>
+
+<form action="/users" method="POST">
+  <p>
+    <label name="user[username]">Username</label>
+    <input name="user[username]" type="text"/>
+  </p>
+  <p>
+    <label name="user[password]">Password</label>
+    <input name="user[password]" type="password"/>
+  </p>
+  <p>
+    <input type="submit"/>
+  </p>
+</form>
